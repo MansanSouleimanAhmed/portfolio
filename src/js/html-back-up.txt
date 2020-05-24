@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/scss.css" />
+    <title>portfolio</title>
+  </head>
+  <body>
+    <div class="container-rotation">
+      <div class="left-div">
+        <button type="button">Test</button>
+      </div>
+      <div class="middle-div"></div>
+      <div class="right-div">
+        <h1>right</h1>
+      </div>
+    </div>
+    <script src="js/js.js"></script>
+  </body>
+</html>
+
+
+const nav = document.querySelector("nav");
+const rotateDiv = document.querySelector(".rotate-div");
+const logo = document.querySelector(".logo");
+const leftFixedDiv = document.querySelector(".left-fixed-div");
+const textLeftDiv = document.querySelector(".text-left-div");
+const itemDiv = document.querySelector(".item-div");
+const beforeElement = document.createElement("div");
+const afterElement = document.createElement("div");
+const slideOrangeDiv = document.querySelector(".slide-orange-div");
+const blackDiv = document.querySelector(".black-div");
+logo.addEventListener("click", dropDown, true);
+function dropDown() {
+  scaleAnimation();
+  function scaleAnimation() {
+    logo.style.display = "block";
+    rotateDiv.style.cssText = `width:100%; height:10px`;
+  }
+  motionLeftDiv();
+  function motionLeftDiv() {
+    blackDiv.style.display = "none";
+    slideOrangeDiv.style.display = "none";
+    logo.style.display = "none";
+    nav.style.display = "none";
+    textLeftDiv.style.cssText = "display:none;";
+    leftFixedDiv.style.cssText = "display:none";
+     rotateDiv.style.cssText = `display:block`;
+    beforeElement.style.cssText =
+      "height:3000px; width:100vw;bottom:200%; background-color:#f56156; position:absolute; display:block";
+    logo.style.display = "none";
+    var pxTranslate = "50vh";
+    var parentDivBefore = itemDiv.parentNode;
+    var parentDivAfter = itemDiv.parentNode;
+    parentDivBefore.insertBefore(beforeElement, itemDiv);
+    parentDivAfter.insertBefore(afterElement, itemDiv);
+
+    rotateDiv.animate(
+      [
+        { transform: "translateY(0px)" },
+        { transform: `translateY(${pxTranslate})` },
+      ],
+
+      {
+        duration: 900,
+        fill: "forwards",
+      }
+    );
+    setTimeout(rotationAnimation, 1000);
+    function rotationAnimation() {
+      beforeElement.style.cssText =
+        "height:300%; width:100vw;top:0%; left:100%; background-color:#f56156;";
+      afterElement.style.cssText =
+        "height:300%; width:100vw;  position: absolute; right: 100%;top:0%;background-color:#fff";
+      rotateDiv.style.cssText = `display: block; position: absolute; top: 0px; left:50%;transform-origin: center; height:300%;bottom:25%`;
+      rotateDiv.animate(
+        [{ transform: "rotate(0deg)" }, { transform: "rotate(180deg)" }],
+
+        {
+          duration: 500,
+          iterations: 1,
+          fill: "forwards",
+        }
+      );
+    }
+  }
+  fadeOutEffect();
+  function fadeOutEffect() {
+    var fadeEffect = setInterval(function () {
+      if (!beforeElement.style.opacity) {
+        beforeElement.style.opacity = 1;
+      }
+      if (beforeElement.style.opacity > 0) {
+        beforeElement.style.opacity -= 1;
+      } else {
+        clearInterval(fadeEffect);
+      }
+      leftFixedDiv.style.cssText = "display:block";
+      setTimeout(reload, 500);
+      function reload() {
+        document.location.reload(true);
+      }
+    }, 1700);
+  }
+}
+
+blackDivMoving();
+function blackDivMoving() {
+  let allLi = document.querySelectorAll(".li");
+  Array.from(allLi).forEach((ele) => {
+    ele.addEventListener("mouseover", function (event) {
+      blackDiv.animate(
+        [{ transform: "translateX(90vw)" }, { transform: "translateX(-90vw)" }],
+        { duration: 1000, fill: "forwards" }
+      );
+    });
+  });
+  blackDiv.addEventListener("mouseleave", () => {
+    blackDiv.animate(
+      [{ transform: "translateX(-90vw)" }, { transform: "translateX(90vw)" }],
+      { duration: 1000, fill: "forwards" }
+    );
+  });
+}
+
+draggableDiv();
+function draggableDiv() {
+  function getOffsetX(e) {
+    e.stopPropagation();
+    if (e) {
+      slideOrangeDiv.isDown = true;
+      slideOrangeDiv.offset = [slideOrangeDiv.offsetLeft - e.clientX];
+    }
+  }
+  function checkEvent(e) {
+    slideOrangeDiv.isDown = false;
+    slideOrangeDiv.addEventListener("mouseout", (event) => {
+      event.preventDefault();
+      slideOrangeDiv.isDown = false;
+    });
+  }
+  function moveDiv(event) {
+    event.stopPropagation();
+    if (slideOrangeDiv.isDown) {
+      slideOrangeDiv.mousePosition = {
+        x: event.clientX,
+      };
+      slideOrangeDiv.style.left =
+        slideOrangeDiv.mousePosition.x + slideOrangeDiv.offset[0] + "px";
+      //    console.log(slideOrangeDiv.style.left);
+    }
+  }
+
+  slideOrangeDiv.addEventListener("mousedown", getOffsetX, true);
+  slideOrangeDiv.addEventListener("mouseup", checkEvent, true);
+  slideOrangeDiv.addEventListener("mousemove", moveDiv, true);
+}
+
+function getInitialPos(event) {
+  event.stopPropagation();
+  if (slideOrangeDiv.isDown) {
+    slideOrangeDiv.mousePosition = {
+      x: event.clientX,
+    };
+    slideOrangeDiv.style.left =
+      slideOrangeDiv.mousePosition.x + slideOrangeDiv.offset[0] + "px";
+    var initialPosition = slideOrangeDiv.style.left;
+    console.log(initialPosition);
+  }
+}
+function animateDiv(event) {
+  //console.log(slideOrangeDiv.style.left);
+  slideOrangeDiv.style.left = "-50%";
+
+  /*   if (
+    slideOrangeDiv.style.left == "-55%" ||
+    slideOrangeDiv.style.left == "-45%"
+  ) {
+    alert("limit");
+  } */
+}
+slideOrangeDiv.addEventListener("mousedown", getInitialPos, true);
+slideOrangeDiv.addEventListener("mouseout", animateDiv, true);
+slideOrangeDiv.addEventListener("mouseup", animateDiv, true);
+
+
+///////////////////////////16/04/2020
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/scss.css" />
+    <title>portfolio</title>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">SVG</div>
+      <div class="flex-one"></div>
+      <ul>
+        <li>
+          <p class="li project"><u> PROJECT</u></p>
+        </li>
+        <li><p class="li credentials">CREDENTIALS</p></li>
+        <li class="li cv">CV</li>
+        <li class="li about-me">ABOUT ME</li>
+        <li class="li contact">CONTACT</li>
+      </ul>
+    </nav>
+
+    <div class="rotate-div">
+      <div class="item-div" id="item-div"></div>
+    </div>
+    <div class="fixed-div-container">
+      <div class="left-fixed-div">
+        <span class="span">H</span><span class="span">i</span><span>,</span>
+        <span>I</span>
+        <span>a</span><span>m</span> <span>M</span><span>a</span
+        ><span>n</span><span>s</span><span>a</span><span>n</span>
+        <span>S</span><span>o</span><span>u</span><span>l</span
+        ><span>e</span><span>i</span><span>m</span><span>a</span
+        ><span>n</span><span>.</span>
+        <span>I</span>
+        <span>a</span><span>m</span>
+        <span>a</span>
+        <span>f</span><span>r</span><span>o</span><span>n</span> 
+          <div class="text-left-div">
+        
+
+            Hi, I am Mansan Souleiman Ahmed.</p>
+          <p>I am a web developer, front-end oriented.</p> 
+
+          <div class="button">
+            <div class="round-div">
+              <div class="circle-one"></div>
+              <div class="round-text"></div>
+              <div class="circle-two"></div>
+            </div>
+          </div> 
+        </div> 
+      </div>
+      <div class="slide-orange-div"></div>
+      <div class="right-fixed-div">
+        <img
+          class="image-right-fix"
+          height="250px"
+          ;
+          width="250px"
+          ;
+          src="assets/images/bird-brown.png"
+        />
+
+        <div class="black-div"></div>
+      </div>
+    </div>
+    <div class="cursor"></div>
+    <!-- Script -->
+    <script src="js/js.js"></script>
+  </body>
+</html>
