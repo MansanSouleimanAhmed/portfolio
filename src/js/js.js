@@ -5,6 +5,7 @@ const allLi = document.querySelectorAll(".li");
 const rotateDiv = document.querySelector(".rotate-div");
 const logo = document.querySelector(".logo");
 const leftFixedDiv = document.querySelector(".left-fixed-div");
+const rightFixedDiv = document.querySelector(".right-fixed-div");
 const textLeftDiv = document.querySelector(".text-left-div");
 const itemDiv = document.querySelector(".item-div");
 const roundText = document.querySelector(".round-text");
@@ -12,10 +13,18 @@ const welcomeText = document.querySelector("#welcome-text");
 const beforeElement = document.createElement("div");
 const afterElement = document.createElement("div");
 const blackDiv = document.querySelector(".black-div");
-const imageRightFix = document.querySelector(".image-right-fix");
+const imageBird = document.querySelector(".image-bird");
 const slideOrangeDiv = document.querySelector(".slide-orange-div");
 /* const allSpan = document.querySelectorAll(".span"); */
 const allSpan = [...document.querySelectorAll("span")];
+const projectDiv = document.querySelector(".project-div");
+const projectItemOne = document.querySelector(".project-item-1");
+const projectItemTwo = document.querySelector(".project-item-2");
+const projectItemThree = document.querySelector(".project-item-3");
+const credentials = document.querySelector(".credentials");
+const cv = document.querySelector(".cv");
+const aboutMe = document.querySelector(".about-me");
+const contact = document.querySelector(".contact");
 ////Dom manipulation
 //Make letters move on mousemove in textLeftDiv
 
@@ -59,7 +68,7 @@ textLeftDiv.addEventListener("mouseout", (e) => {
 });
 ///Logo disapear
 logo.addEventListener("click", dropDown, true);
-var rocket = document.querySelector(".image-right-fix");
+var rocket = document.querySelector(".image-bird");
 var btn = document.querySelector(".slide-orange-div");
 
 function dropDown() {
@@ -76,7 +85,7 @@ function dropDown() {
     nav.style.display = "none";
     textLeftDiv.style.cssText = "display:none;";
     leftFixedDiv.style.cssText = "display:none";
-    imageRightFix.style.display = "none";
+    imageBird.style.display = "none";
     var pxTranslate = "50vh";
     var parentDivBefore = itemDiv.parentNode;
     var parentDivAfter = itemDiv.parentNode;
@@ -136,27 +145,31 @@ function dropDown() {
 blackDivMoving();
 function blackDivMoving() {
   Array.from(allLi).forEach((ele) => {
-    // console.log(ele.classList.value);
+    projectDiv.addEventListener("mouseover", (e) => {
+      blackDiv.classList.toggle("open");
+    });
     ele.addEventListener("mouseover", function(event) {
       blackDiv.classList.toggle("open");
+
       applyStyle();
       function applyStyle(classList) {
         classList = ele.classList.value;
         switch (classList) {
           case "li project":
-            //  blackDiv.style.cssText = "background-color:red";
+            blackDiv.style.cssText = "background-color:gray";
             break;
           case "li credentials":
-            //   blackDiv.style.cssText = "background-color:blue";
+            blackDiv.style.cssText = "background-color:blue";
+
             break;
           case "li cv":
-            //    blackDiv.style.cssText = "background-color:green";
+            blackDiv.style.cssText = "background-color:green";
             break;
           case "li about-me":
-            //   blackDiv.style.cssText = "background-color:gray";
+            blackDiv.style.cssText = "background-color:gray";
             break;
           default:
-          //  blackDiv.style.cssText = "background-color:orange";
+            blackDiv.style.cssText = "background-color:orange";
         }
       }
       //  setTimeout()
@@ -192,13 +205,18 @@ function draggableDiv() {
     }
   }
   const roundDivJs = document.createElement("div");
+
   function checkEvent(e) {
-    roundText.appendChild(roundDivJs);
-    textLeftDiv.style.zIndex = "3";
-    allSpan.forEach((letters) => {
-      letters.style.zIndex = "3";
-      letters.style.color = "#fff";
-    });
+    function initialCheckEvent() {
+      roundText.appendChild(roundDivJs);
+      textLeftDiv.style.zIndex = "3";
+      allSpan.forEach((letters) => {
+        letters.style.zIndex = "3";
+        letters.style.color = "#fff";
+      });
+    }
+    initialCheckEvent();
+
     setTimeout(showWelcome, 500);
     function showWelcome() {
       const message = "Welcome :)";
@@ -219,15 +237,13 @@ function draggableDiv() {
           welcomeText.innerHTML = portion;
         });
       });
-
-      setTimeout(showText, 1000);
       function showText() {
         textWelcome.style.display = "block";
       }
     }
-    roundDivJs.setAttribute("class", "round-div-created-div-two");
     round();
     function round() {
+      roundDivJs.setAttribute("class", "round-div-created-div-two");
       roundDivJs.style.display = "block";
       roundDivJs.animate(
         [{ transform: "translateX(0px)" }, { transform: "translateX(-159px)" }],
@@ -245,9 +261,9 @@ function draggableDiv() {
     slideOrangeDiv.addEventListener("mouseout", (event) => {
       event.preventDefault();
       slideOrangeDiv.isDown = false;
-      ///
     });
   }
+
   function moveDiv(event) {
     event.stopPropagation();
     if (slideOrangeDiv.isDown) {
@@ -256,9 +272,22 @@ function draggableDiv() {
       };
       slideOrangeDiv.style.left =
         slideOrangeDiv.mousePosition.x + slideOrangeDiv.offset[0] + "px";
+      var distanceLeft = Math.floor(
+        Math.floor(slideOrangeDiv.getBoundingClientRect().right) / 100
+      );
+      var distanceRight = Math.floor(
+        Math.floor(slideOrangeDiv.getBoundingClientRect().left) / 100
+      );
+      console.log(distanceRight);
+      if (distanceLeft === 12) {
+        slideOrangeDiv.style.left = "-50%";
+        checkEvent();
+      }
+      if (distanceRight === -13) {
+        slideOrangeDiv.style.left = "-50%";
+      }
     }
   }
-
   slideOrangeDiv.addEventListener("mousedown", getOffsetX, true);
   slideOrangeDiv.addEventListener("mouseup", checkEvent, true);
   slideOrangeDiv.addEventListener("mousemove", moveDiv, true);
@@ -279,6 +308,7 @@ function getInitialPos(event) {
 function animateDiv(event) {
   slideOrangeDiv.style.left = "-50%";
 }
+
 slideOrangeDiv.addEventListener("mousedown", getInitialPos, true);
 slideOrangeDiv.addEventListener("mouseout", animateDiv, true);
 slideOrangeDiv.addEventListener("mouseup", animateDiv, true);

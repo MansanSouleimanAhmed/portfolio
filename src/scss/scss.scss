@@ -30,15 +30,20 @@
     transform: translateX(0px);
   }
 }
-/* @keyframes slideLeft {
+@keyframes birdScale {
   0% {
-    transform: translateX(0px);
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.5);
   }
 
   100% {
-    transform: translateX(-159px);
+    transform: scale(0);
   }
-} */
+}
+
 $gray: #93949b;
 $light-yellow: #f2c5a3;
 $beige: #f1ddd6;
@@ -47,20 +52,15 @@ $brown: #a75a4d;
 $orange: #f56156;
 $dark-gray: #434751;
 $white: #fff;
+
 body {
-  //cursor: none;
-  /* .cursor {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    pointer-events: none;
-    transition: all 0.3 ease;
-    border: 3px solid black;
-    background: transparent;
-    z-index: 10;
-  } */
+  outline-style: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   nav {
     display: flex;
     position: fixed;
@@ -82,12 +82,13 @@ body {
       flex: 1;
     }
     ul {
-      padding-right: 100px;
       list-style-type: none;
       color: black;
+      padding-right: 50px;
       li {
         display: inline-block;
-        padding-right: 20px;
+        padding: 10px;
+
         font-size: 15px;
       }
     }
@@ -195,13 +196,6 @@ body {
                 margin: 0px;
                 color: #fff;
                 font-size: 20px;
-                /*   .visible {
-                  color: #fff;
-                }
-
-                .invisible {
-                  color: transparent;
-                } */
               }
             }
             .circle-two {
@@ -242,12 +236,12 @@ body {
 
     .right-fixed-div {
       position: relative;
-      width: 40%;
+      width: 50%;
 
       .black-div {
         position: absolute;
         top: 0%;
-        left: 0%;
+        right: 0px;
         width: 0vw;
         height: 100vh;
         transition: all 1s ease-out;
@@ -255,16 +249,39 @@ body {
       }
       .black-div.open {
         width: 50vw;
+        .project-div {
+          display: flex;
+          flex-wrap: wrap;
+          position: absolute;
+          top: 30%;
+          left: 20%;
+          height: 350px;
+          width: 450px;
+          background-color: red;
+          justify-content: space-around;
+          padding-top: 20px;
+          .project-item {
+            height: 120px;
+            width: 120px;
+            background-color: yellow;
+            &:hover {
+              border-radius: 50%;
+            }
+          }
+        }
       }
 
-      .image-right-fix {
+      .image-bird {
         position: relative;
         top: 1%;
-        left: -25%;
+        left: -15%;
         z-index: 3;
         border-radius: 50%;
         z-index: 1;
         animation: 4s ease infinite jump;
+      }
+      .image-bird-scale {
+        animation: 3s ease infinite birdScale;
       }
     }
   }
