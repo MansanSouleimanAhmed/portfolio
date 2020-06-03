@@ -126,9 +126,8 @@ body {
         font-size: 20px;
         z-index: 3;
         display: inline-block;
-        //      background-color: red;
+
         .span {
-          //  padding: 2px;
         }
         span {
           position: relative;
@@ -138,7 +137,6 @@ body {
           border-radius: 50%;
           height: 20px;
           width: 20px;
-          //  padding: 2px;
         }
 
         .button {
@@ -166,8 +164,6 @@ body {
               border-radius: 50%;
               background-color: #f56156;
               border: solid 2px #fff;
-              /*   animation: 1.5s ease slideLeft;
-              animation-fill-mode: forwards; */
               visibility: visible;
             }
             .circle-one {
@@ -237,7 +233,6 @@ body {
     .right-fixed-div {
       position: relative;
       width: 50%;
-
       .black-div {
         position: absolute;
         top: 0%;
@@ -249,26 +244,23 @@ body {
       }
       .black-div.open {
         width: 50vw;
-        .project-div-open {
-          display: flex;
-          flex-wrap: wrap;
-          position: absolute;
-          top: 30%;
-          left: 20%;
-          height: 350px;
-          width: 450px;
-          background-color: red;
-          justify-content: space-around;
-          padding-top: 20px;
-          .project-item-open {
-            height: 80px;
-            width: 80px;
-            background-color: yellow;
-            &:hover {
-              border-radius: 50%;
-            }
-          }
-        }
+      }
+      .project-div {
+        position: absolute;
+        display: flex;
+        top: 30%;
+        right: 0px;
+        width: 0px;
+        height: 0px;
+        background-color: red;
+        transition: all 0.5s ease-out;
+        justify-content: space-around;
+        -webkit-transition: all 1s ease-out;
+      }
+      .project-div.open {
+        height: 350px;
+        width: 30vw;
+        margin-right: 50px;
       }
 
       .image-bird {

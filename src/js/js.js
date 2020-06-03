@@ -18,10 +18,10 @@ const slideOrangeDiv = document.querySelector(".slide-orange-div");
 /* const allSpan = document.querySelectorAll(".span"); */
 const allSpan = [...document.querySelectorAll("span")];
 const projectDiv = document.querySelector(".project-div");
-const projectItem = document.querySelectorAll(".project-item");
+/* const projectItem = document.querySelectorAll(".project-item");
 const projectItemOne = document.querySelector(".project-item-1");
 const projectItemTwo = document.querySelector(".project-item-2");
-const projectItemThree = document.querySelector(".project-item-3");
+const projectItemThree = document.querySelector(".project-item-3"); */
 const credentials = document.querySelector(".credentials-div");
 const cv = document.querySelector(".cv");
 const aboutMe = document.querySelector(".about-me-div");
@@ -118,62 +118,36 @@ function dropDown() {
 blackDivMoving();
 function blackDivMoving() {
   Array.from(allLi).forEach((ele) => {
-    projectDiv.addEventListener("mouseover", (e) => {
-      blackDiv.classList.toggle("open");
-    });
-    ele.addEventListener("mouseover", function(event) {
-      blackDiv.classList.toggle("open");
-
+    ele.addEventListener("mouseover", (e) => {
+      blackDiv.classList.add("open");
+      projectDiv.classList.add("open");
+      let classList = ele.classList.value;
       applyStyle();
-      function applyStyle(classList) {
-        classList = ele.classList.value;
+      function applyStyle() {
         switch (classList) {
           case "li project":
-            //  console.log(classList);
-            blackDiv.style.cssText = "background-color:gray";
-            setTimeout(showProjectDiv, 4000);
-            function showProjectDiv() {
-              if (classList) {
-                projectDiv.classList.add("project-div-open");
-                Array.from(projectItem).forEach((ele) => {
-                  ele.classList.add("project-item-open");
-                });
-              } else {
-                projectDiv.classList.remove("project-div-open");
-              }
-            }
-            credentials.classList.remove("credentials-open");
+            projectDiv.style.backgroundColor = "yellow";
             break;
           case "li credentials":
-            projectDiv.classList.remove("project-div-open");
-            credentials.classList.add("credentials-open");
-
+            projectDiv.style.backgroundColor = "blue";
             break;
           case "li cv":
-            blackDiv.style.cssText = "background-color:green";
-            credentials.classList.remove("credentials-open");
-
+            projectDiv.style.backgroundColor = "green";
             break;
           case "li about-me":
-            blackDiv.style.cssText = "background-color:gray";
+            projectDiv.style.backgroundColor = "gray";
             break;
           default:
-            blackDiv.style.cssText = "background-color:orange";
         }
       }
     });
-
-    blackDiv.addEventListener("mouseout", () => {
-      blackDiv.classList.remove("open");
-    });
   });
 }
+
 contentAppear();
 function contentAppear() {
   Array.from(allLi).forEach((ele) => {
-    ele.addEventListener("click", (event) => {
-      alert("test");
-    });
+    ele.addEventListener("click", (event) => {});
   });
 }
 
