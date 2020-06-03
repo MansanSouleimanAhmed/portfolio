@@ -18,41 +18,14 @@ const slideOrangeDiv = document.querySelector(".slide-orange-div");
 /* const allSpan = document.querySelectorAll(".span"); */
 const allSpan = [...document.querySelectorAll("span")];
 const projectDiv = document.querySelector(".project-div");
+const projectItem = document.querySelectorAll(".project-item");
 const projectItemOne = document.querySelector(".project-item-1");
 const projectItemTwo = document.querySelector(".project-item-2");
 const projectItemThree = document.querySelector(".project-item-3");
-const credentials = document.querySelector(".credentials");
+const credentials = document.querySelector(".credentials-div");
 const cv = document.querySelector(".cv");
-const aboutMe = document.querySelector(".about-me");
-const contact = document.querySelector(".contact");
-////Dom manipulation
-//Make letters move on mousemove in textLeftDiv
-
-/*leftFixedDiv.addEventListener("mousemove", (e) => {
-   let cursorX = e.pageX;
-  let cursorY = e.pageY;
-  // cursor.setAttribute("style", `top :${cursorY}px; left:${cursorX}px`);
-  var test = [...document.querySelectorAll("span")];
-  test.forEach((e) => {
-    let dx = `${cursorX - Math.floor(e.getBoundingClientRect().x)}px`;
-    let dy = `${cursorY - Math.floor(e.getBoundingClientRect().y)}px`;
-    //console.log(dx + " " + dy);
-    let array = [];
-    array.push(e);
-    //  console.log(array);
-    array.forEach((element) => {
-      leftFixedDiv.addEventListener("mousemove", (event) => {
-        //  element.style.cssText = `display:`;
-        if (dx < "70px") {
-          element.style.cssText = `display:none`;
-        } else {
-          //  element.style.cssText = `display:block`;
-        }
-      });
-      element.addEventListener("mouseout", (event) => {});
-    });
-  }); 
-});*/
+const aboutMe = document.querySelector(".about-me-div");
+const contact = document.querySelector(".contact-div");
 
 allSpan.forEach((letters) => {
   letters.addEventListener("mouseover", (e) => {
@@ -66,7 +39,7 @@ allSpan.forEach((letters) => {
 textLeftDiv.addEventListener("mouseout", (e) => {
   cursor.style.display = "none";
 });
-///Logo disapear
+
 logo.addEventListener("click", dropDown, true);
 var rocket = document.querySelector(".image-bird");
 var btn = document.querySelector(".slide-orange-div");
@@ -156,14 +129,30 @@ function blackDivMoving() {
         classList = ele.classList.value;
         switch (classList) {
           case "li project":
+            //  console.log(classList);
             blackDiv.style.cssText = "background-color:gray";
+            setTimeout(showProjectDiv, 4000);
+            function showProjectDiv() {
+              if (classList) {
+                projectDiv.classList.add("project-div-open");
+                Array.from(projectItem).forEach((ele) => {
+                  ele.classList.add("project-item-open");
+                });
+              } else {
+                projectDiv.classList.remove("project-div-open");
+              }
+            }
+            credentials.classList.remove("credentials-open");
             break;
           case "li credentials":
-            blackDiv.style.cssText = "background-color:blue";
+            projectDiv.classList.remove("project-div-open");
+            credentials.classList.add("credentials-open");
 
             break;
           case "li cv":
             blackDiv.style.cssText = "background-color:green";
+            credentials.classList.remove("credentials-open");
+
             break;
           case "li about-me":
             blackDiv.style.cssText = "background-color:gray";
@@ -172,7 +161,6 @@ function blackDivMoving() {
             blackDiv.style.cssText = "background-color:orange";
         }
       }
-      //  setTimeout()
     });
 
     blackDiv.addEventListener("mouseout", () => {
@@ -278,7 +266,7 @@ function draggableDiv() {
       var distanceRight = Math.floor(
         Math.floor(slideOrangeDiv.getBoundingClientRect().left) / 100
       );
-      console.log(distanceRight);
+      // console.log(distanceRight);
       if (distanceLeft === 12) {
         slideOrangeDiv.style.left = "-50%";
         checkEvent();

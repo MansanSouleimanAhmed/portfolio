@@ -249,7 +249,7 @@ body {
       }
       .black-div.open {
         width: 50vw;
-        .project-div {
+        .project-div-open {
           display: flex;
           flex-wrap: wrap;
           position: absolute;
@@ -260,9 +260,9 @@ body {
           background-color: red;
           justify-content: space-around;
           padding-top: 20px;
-          .project-item {
-            height: 120px;
-            width: 120px;
+          .project-item-open {
+            height: 80px;
+            width: 80px;
             background-color: yellow;
             &:hover {
               border-radius: 50%;
