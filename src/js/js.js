@@ -18,15 +18,16 @@ const slideOrangeDiv = document.querySelector(".slide-orange-div");
 /* const allSpan = document.querySelectorAll(".span"); */
 const allSpan = [...document.querySelectorAll("span")];
 const projectDiv = document.querySelector(".project-div");
-/* const projectItem = document.querySelectorAll(".project-item");
-const projectItemOne = document.querySelector(".project-item-1");
+const projectDivItem = document.querySelector(".project-div-item");
+/*const projectItemOne = document.querySelector(".project-item-1");
 const projectItemTwo = document.querySelector(".project-item-2");
 const projectItemThree = document.querySelector(".project-item-3"); */
 const credentials = document.querySelector(".credentials-div");
 const cv = document.querySelector(".cv");
 const aboutMe = document.querySelector(".about-me-div");
 const contact = document.querySelector(".contact-div");
-
+const githubDiv = document.querySelector(".github-div");
+const websitDiv = document.querySelector(".website-div");
 allSpan.forEach((letters) => {
   letters.addEventListener("mouseover", (e) => {
     letters.animate(
@@ -54,6 +55,7 @@ function dropDown() {
   function motionLeftDiv() {
     blackDiv.style.display = "none";
     slideOrangeDiv.style.display = "none";
+    projectDiv.style.display = "none";
     logo.style.display = "none";
     nav.style.display = "none";
     textLeftDiv.style.cssText = "display:none;";
@@ -121,21 +123,35 @@ function blackDivMoving() {
     ele.addEventListener("mouseover", (e) => {
       blackDiv.classList.add("open");
       projectDiv.classList.add("open");
+
       let classList = ele.classList.value;
       applyStyle();
       function applyStyle() {
         switch (classList) {
           case "li project":
             projectDiv.style.backgroundColor = "yellow";
+            projectDivItem.classList.add("open");
+            githubDiv.classList.add("open");
             break;
           case "li credentials":
             projectDiv.style.backgroundColor = "blue";
+            projectDivItem.classList.remove("open");
+            githubDiv.classList.remove("open");
             break;
           case "li cv":
             projectDiv.style.backgroundColor = "green";
+            projectDivItem.classList.remove("open");
+            githubDiv.classList.remove("open");
             break;
           case "li about-me":
             projectDiv.style.backgroundColor = "gray";
+            projectDivItem.classList.remove("open");
+            githubDiv.classList.remove("open");
+            break;
+          case "li contact":
+            projectDiv.style.backgroundColor = "gray";
+            projectDivItem.classList.remove("open");
+            githubDiv.classList.remove("open");
             break;
           default:
         }
@@ -240,7 +256,6 @@ function draggableDiv() {
       var distanceRight = Math.floor(
         Math.floor(slideOrangeDiv.getBoundingClientRect().left) / 100
       );
-      // console.log(distanceRight);
       if (distanceLeft === 12) {
         slideOrangeDiv.style.left = "-50%";
         checkEvent();
