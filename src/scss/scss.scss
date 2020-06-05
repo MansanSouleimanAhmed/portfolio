@@ -17,6 +17,15 @@
     transform: translateY(50px);
   }
 }
+@keyframes smoothSlide {
+  0% {
+    transform: translateX(0px);
+  }
+
+  100% {
+    transform: translateX(-100px);
+  }
+}
 @keyframes blackDivMove {
   0% {
     transform: translateX(0px);
@@ -105,14 +114,10 @@ body {
       position: relative;
       height: 100vh;
       width: 50%;
-      //background-color: $orange;
-
       display: flex;
-
       .flex-column {
         flex: 1;
       }
-
       .text-left-div {
         position: relative;
         top: 55%;
@@ -248,25 +253,25 @@ body {
       }
       .project-div {
         position: absolute;
-        display: flex;
         top: 30%;
         right: 0px;
         width: 0px;
-        height: 0px;
+        height: 350px;
         background-color: red;
-        justify-content: space-around;
         transition: all 1s ease-out;
         -webkit-transition: all 1s ease-out;
         .project-div-item {
           position: absolute;
-          top: 50px;
+          flex-wrap: wrap;
+          display: flex;
+          display: block;
           height: 50px;
           width: 0px;
+          margin: 50px;
           background-color: black;
-          transition: all 1.5s ease-out;
-          -webkit-transition: all 1.5s ease-out;
-          .github-div {
-            position: absolute;
+          transition: all 2s ease-out;
+          -webkit-transition: all 2s ease-out;
+          /*           .github-div {
             height: 50px;
             width: 0px;
             background-color: white;
@@ -275,8 +280,20 @@ body {
           }
           .github-div.open {
             height: 50px;
-            width: 50px;
+            width: 100px;
           }
+          .website-div {
+            height: 50px;
+            width: 0px;
+            background-color: blue;
+            transition: all 1.5s ease-out;
+            -webkit-transition: all 1.5s;
+          }
+          .website-div.open {
+            height: 50px;
+            width: 100px;
+            right: 100px;
+          } */
         }
         .project-div-item.open {
           width: 200px;

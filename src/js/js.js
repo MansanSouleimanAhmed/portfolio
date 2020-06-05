@@ -18,7 +18,7 @@ const slideOrangeDiv = document.querySelector(".slide-orange-div");
 /* const allSpan = document.querySelectorAll(".span"); */
 const allSpan = [...document.querySelectorAll("span")];
 const projectDiv = document.querySelector(".project-div");
-const projectDivItem = document.querySelector(".project-div-item");
+const projectDivItem = document.querySelectorAll(".project-div-item");
 /*const projectItemOne = document.querySelector(".project-item-1");
 const projectItemTwo = document.querySelector(".project-item-2");
 const projectItemThree = document.querySelector(".project-item-3"); */
@@ -55,7 +55,7 @@ function dropDown() {
   function motionLeftDiv() {
     blackDiv.style.display = "none";
     slideOrangeDiv.style.display = "none";
-    projectDiv.style.display = "none";
+    //   projectDiv.style.display = "none";
     logo.style.display = "none";
     nav.style.display = "none";
     textLeftDiv.style.cssText = "display:none;";
@@ -121,37 +121,49 @@ blackDivMoving();
 function blackDivMoving() {
   Array.from(allLi).forEach((ele) => {
     ele.addEventListener("mouseover", (e) => {
-      blackDiv.classList.add("open");
-      projectDiv.classList.add("open");
+      addOpen();
+      function addOpen() {
+        blackDiv.classList.add("open");
+        projectDiv.classList.add("open");
+      }
+      function addProject() {
+        Array.from(projectDivItem).forEach((ele) => {
+          ele.classList.add("open");
+        });
 
+        githubDiv.classList.add("open");
+        websitDiv.classList.add("open");
+      }
+      function removeLiProject() {
+        Array.from(projectDivItem).forEach((ele) => {
+          ele.classList.add("open");
+        });
+        githubDiv.classList.remove("open");
+        websitDiv.classList.remove("open");
+      }
       let classList = ele.classList.value;
       applyStyle();
       function applyStyle() {
         switch (classList) {
           case "li project":
             projectDiv.style.backgroundColor = "yellow";
-            projectDivItem.classList.add("open");
-            githubDiv.classList.add("open");
+            addProject();
             break;
           case "li credentials":
             projectDiv.style.backgroundColor = "blue";
-            projectDivItem.classList.remove("open");
-            githubDiv.classList.remove("open");
+            removeLiProject();
             break;
           case "li cv":
             projectDiv.style.backgroundColor = "green";
-            projectDivItem.classList.remove("open");
-            githubDiv.classList.remove("open");
+            removeLiProject();
             break;
           case "li about-me":
             projectDiv.style.backgroundColor = "gray";
-            projectDivItem.classList.remove("open");
-            githubDiv.classList.remove("open");
+            removeLiProject();
             break;
           case "li contact":
             projectDiv.style.backgroundColor = "gray";
-            projectDivItem.classList.remove("open");
-            githubDiv.classList.remove("open");
+            removeLiProject();
             break;
           default:
         }
