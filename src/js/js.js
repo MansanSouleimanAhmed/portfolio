@@ -10,6 +10,7 @@ const textLeftDiv = document.querySelector(".text-left-div");
 const itemDiv = document.querySelector(".item-div");
 const roundText = document.querySelector(".round-text");
 const welcomeText = document.querySelector("#welcome-text");
+//const cvId = document.querySelector("#cv-id");
 const beforeElement = document.createElement("div");
 const afterElement = document.createElement("div");
 const blackDiv = document.querySelector(".black-div");
@@ -23,11 +24,32 @@ const projectDivItem = document.querySelectorAll(".project-div-item");
 const projectItemTwo = document.querySelector(".project-item-2");
 const projectItemThree = document.querySelector(".project-item-3"); */
 const credentials = document.querySelector(".credentials-div");
-const cv = document.querySelector(".cv");
-const aboutMe = document.querySelector(".about-me-div");
+const cvDiv = document.querySelector(".cv-div");
+const cvId = document.querySelector("#cv-id");
+const motivationDiv = document.querySelector(".motivation-div");
 const contact = document.querySelector(".contact-div");
-const githubDiv = document.querySelector(".github-div");
-const websitDiv = document.querySelector(".website-div");
+const projectItemP = document.querySelector(".project-item-p");
+//const githubDiv = document.querySelector(".github-div");
+//const websitDiv = document.querySelector(".website-div");
+const firstProject = document.getElementById("first-project");
+const beforeFirstP = document.createElement("div");
+const afterFirstP = document.createElement("div");
+const secondProject = document.querySelector("#second-project");
+const beforeSecondP = document.createElement("div");
+const afterSecondP = document.createElement("div");
+const thirdProject = document.querySelector("#third-project");
+const beforeThridP = document.createElement("div");
+const afterThirdP = document.createElement("div");
+const frontEnd = document.querySelector(".front-end-div");
+const frontLanguages = document.querySelector(".front-end-languages");
+const backendDiv = document.querySelector(".back-end-div");
+const backendLanguages = document.querySelector(".back-end-languages");
+const other = document.querySelector(".other-div");
+const otherTools = document.querySelector(".other-tools");
+
+const pdf = document.createTextNode("Download pdf");
+const cvText = document.querySelector(".cv-text");
+const motivationText = document.querySelector(".motivation-text");
 allSpan.forEach((letters) => {
   letters.addEventListener("mouseover", (e) => {
     letters.animate(
@@ -126,45 +148,124 @@ function blackDivMoving() {
         blackDiv.classList.add("open");
         projectDiv.classList.add("open");
       }
+
       function addProject() {
         Array.from(projectDivItem).forEach((ele) => {
           ele.classList.add("open");
         });
-
-        githubDiv.classList.add("open");
-        websitDiv.classList.add("open");
+        projectItemP.classList.add("open");
+        addContInP();
+        function addContInP() {
+          let bFP = firstProject.appendChild(beforeFirstP);
+          bFP.style.cssText =
+            "z-index:3; height:50px; width:50%;  background-color: red";
+          let aFP = firstProject.appendChild(afterFirstP);
+          aFP.style.cssText =
+            "z-index:3; height:50px; width:50%;  background-color: blue";
+          let bSP = secondProject.appendChild(beforeSecondP);
+          bSP.style.cssText =
+            "z-index:3; height:50px; width:50%;  background-color: blue";
+          let aSP = secondProject.appendChild(afterSecondP);
+          aSP.style.cssText =
+            "z-index:3; height:50px; width:50%;  background-color: red";
+          let bTP = thirdProject.appendChild(beforeThridP);
+          bTP.style.cssText =
+            "z-index:3; height:50px; width:50%;  background-color: red";
+          let aTP = thirdProject.appendChild(afterThirdP);
+          aTP.style.cssText =
+            "z-index:3; height:50px; width:50%;  background-color: blue";
+        }
       }
+
+      function addCredentials() {
+        frontEnd.classList.add("open");
+        frontLanguages.classList.add("open");
+        backendDiv.classList.add("open");
+        backendLanguages.classList.add("open");
+        other.classList.add("open");
+        otherTools.classList.add("open");
+      }
+
       function removeLiProject() {
         Array.from(projectDivItem).forEach((ele) => {
-          ele.classList.add("open");
+          ele.classList.remove("open");
         });
-        githubDiv.classList.remove("open");
-        websitDiv.classList.remove("open");
+        projectItemP.classList.remove("open");
+      }
+
+      function cv() {
+        cvDiv.classList.add("open");
+        setTimeout(addTxt, 1500);
+        function addTxt() {
+          cvText.classList.add("open");
+        }
+      }
+      function removeCv() {
+        cvDiv.classList.remove("open");
+
+        cvText.classList.remove("open");
+
+        //
+      }
+
+      function removeCredentials() {
+        frontLanguages.classList.remove("open");
+        frontEnd.classList.remove("open");
+        backendDiv.classList.remove("open");
+        backendLanguages.classList.remove("open");
+        other.classList.remove("open");
+        otherTools.classList.remove("open");
+      }
+      function addMotivation() {
+        motivationDiv.classList.add("open");
+        setTimeout(addMotivationTxt, 2000);
+        function addMotivationTxt() {
+          motivationText.classList.add("open");
+        }
+      }
+      function removeMotivationTxt() {
+        motivationText.classList.remove("open");
+      }
+      function removeMotivation() {
+        motivationDiv.classList.remove("open");
       }
       let classList = ele.classList.value;
       applyStyle();
       function applyStyle() {
         switch (classList) {
           case "li project":
-            projectDiv.style.backgroundColor = "yellow";
-            addProject();
+            //   projectDiv.style.backgroundColor = "";
+            removeCredentials();
+            removeCv();
+            setTimeout(addProject, 300);
+            removeMotivation();
             break;
           case "li credentials":
-            projectDiv.style.backgroundColor = "blue";
+            // projectDiv.style.backgroundColor = "yellow";
             removeLiProject();
+            removeCv();
+            removeMotivation();
+            setTimeout(addCredentials, 300);
+            removeMotivationTxt();
             break;
           case "li cv":
-            projectDiv.style.backgroundColor = "green";
+            //  projectDiv.style.backgroundColor = "green";
             removeLiProject();
+            removeCredentials();
+            removeMotivation();
+            removeMotivationTxt();
+            cv();
+
             break;
-          case "li about-me":
-            projectDiv.style.backgroundColor = "gray";
+          case "li motivation":
+            //  projectDiv.style.backgroundColor = "gray";
+            removeCv();
             removeLiProject();
+            removeCredentials();
+            removeMotivationTxt();
+            addMotivation();
             break;
-          case "li contact":
-            projectDiv.style.backgroundColor = "gray";
-            removeLiProject();
-            break;
+
           default:
         }
       }
@@ -182,9 +283,9 @@ function contentAppear() {
 draggableDiv();
 function draggableDiv() {
   function getOffsetX(e) {
-    textLeftDiv.style.zIndex = "2";
+    textLeftDiv.style.zIndex = "8";
     allSpan.forEach((letters) => {
-      letters.style.zIndex = "2";
+      letters.style.zIndex = "8";
       letters.style.color = "#f56156";
     });
 
@@ -199,9 +300,9 @@ function draggableDiv() {
   function checkEvent(e) {
     function initialCheckEvent() {
       roundText.appendChild(roundDivJs);
-      textLeftDiv.style.zIndex = "3";
+      textLeftDiv.style.zIndex = "10";
       allSpan.forEach((letters) => {
-        letters.style.zIndex = "3";
+        letters.style.zIndex = "10";
         letters.style.color = "#fff";
       });
     }
