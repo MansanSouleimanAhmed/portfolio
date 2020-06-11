@@ -138,7 +138,24 @@ function dropDown() {
     }, 1700);
   }
 }
-
+const websiteTxtOne = document.createTextNode("Website");
+var bFP;
+var websiteAppendOne;
+var githubAppendOne;
+const githubOne = document.createTextNode("Github");
+var aFP;
+const githubTwo = document.createTextNode("Github2");
+const websiteTxtTwo = document.createTextNode("Website");
+var bFP;
+var aSP;
+var githubAppendTwo;
+var websiteAppendTwo;
+const githubThree = document.createTextNode("Github");
+const websiteTxtThree = document.createTextNode("Website");
+var websiteAppendThree;
+var githubAppendThree;
+var aTP;
+var bTP;
 blackDivMoving();
 function blackDivMoving() {
   Array.from(allLi).forEach((ele) => {
@@ -156,22 +173,28 @@ function blackDivMoving() {
         projectItemP.classList.add("open");
         addContInP();
         function addContInP() {
-          let bFP = firstProject.appendChild(beforeFirstP);
+          bFP = firstProject.appendChild(beforeFirstP);
+          websiteAppendOne = bFP.appendChild(websiteTxtOne);
           bFP.style.cssText =
             "z-index:3; height:50px; width:50%;  background-color: red";
-          let aFP = firstProject.appendChild(afterFirstP);
+          aFP = firstProject.appendChild(afterFirstP);
+          githubAppendOne = aFP.appendChild(githubOne);
           aFP.style.cssText =
             "z-index:3; height:50px; width:50%;  background-color: blue";
-          let bSP = secondProject.appendChild(beforeSecondP);
+          bSP = secondProject.appendChild(beforeSecondP);
+          websiteAppendTwo = bSP.appendChild(websiteTxtTwo);
           bSP.style.cssText =
             "z-index:3; height:50px; width:50%;  background-color: blue";
-          let aSP = secondProject.appendChild(afterSecondP);
+          aSP = secondProject.appendChild(afterSecondP);
+          githubAppendTwo = aSP.appendChild(githubTwo);
           aSP.style.cssText =
             "z-index:3; height:50px; width:50%;  background-color: red";
-          let bTP = thirdProject.appendChild(beforeThridP);
+          bTP = thirdProject.appendChild(beforeThridP);
+          websiteAppendThree = bTP.appendChild(websiteTxtThree);
           bTP.style.cssText =
             "z-index:3; height:50px; width:50%;  background-color: red";
-          let aTP = thirdProject.appendChild(afterThirdP);
+          aTP = thirdProject.appendChild(afterThirdP);
+          githubAppendThree = aTP.appendChild(githubThree);
           aTP.style.cssText =
             "z-index:3; height:50px; width:50%;  background-color: blue";
         }
@@ -191,6 +214,25 @@ function blackDivMoving() {
           ele.classList.remove("open");
         });
         projectItemP.classList.remove("open");
+        if (
+          bFP.hasChildNodes() &&
+          aSP.hasChildNodes() &&
+          bSP.hasChildNodes() &&
+          aTP.hasChildNodes() &&
+          bTP.hasChildNodes()
+        ) {
+          websiteAppendOne.parentNode.removeChild(websiteTxtOne);
+          githubAppendOne.parentNode.removeChild(githubOne);
+
+          githubAppendTwo.parentNode.removeChild(githubTwo);
+          websiteAppendTwo.parentNode.removeChild(websiteTxtTwo);
+          githubAppendThree.parentNode.removeChild(githubThree);
+          websiteAppendThree.parentNode.removeChild(websiteTxtThree);
+        }
+        /*      if (websiteAppendTwo.hasChildNodes()) {
+          websiteAppendTwo.parentNode.removeChild(githubTwo);
+          githubAppendOne.parentNode.removeChild(websiteTxtTwo);
+        } */
       }
 
       function cv() {
@@ -269,7 +311,6 @@ function blackDivMoving() {
               removeMotivationTxt();
               removeCv();
             }
-
             motivationAsync().then(addMotivation());
             break;
 
