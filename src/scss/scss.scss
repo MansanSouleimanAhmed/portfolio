@@ -287,6 +287,18 @@ body {
         -webkit-transition: all 1s ease-out;
       }
 
+      #first-project {
+        top: 203px;
+      }
+
+      #second-project {
+        top: 325px;
+      }
+
+      #third-project {
+        top: 450px;
+      }
+
       .project-div.open {
         height: 300px;
         width: 30vw;
@@ -310,8 +322,7 @@ body {
 
 
       .project-div-item {
-        position: relative;
-        top: -50px;
+        position: absolute;
         left: 35%;
         flex-wrap: wrap;
         display: flex;
@@ -346,7 +357,8 @@ body {
       }
 
       .front-end-div.open {
-        width: 100px;
+        width: 150px;
+        left: 50%;
       }
 
       .front-end-languages {
@@ -383,7 +395,8 @@ body {
       }
 
       .back-end-div.open {
-        width: 100px;
+        width: 150px;
+        left: 50%;
       }
 
       .back-end-languages {
@@ -412,7 +425,6 @@ body {
         display: flex;
         height: 53px;
         width: 0px;
-        // z-index: 9;
         margin-top: 10px;
         background-color: yellow;
         transition: all 1.5s ease-out;
@@ -420,7 +432,8 @@ body {
       }
 
       .other-div.open {
-        width: 100px;
+        width: 150px;
+        left: 50%;
       }
 
       .other-tools {
@@ -449,7 +462,6 @@ body {
 
       .cv-text.open {
         text-align: center;
-        //padding-left: 10px;
         color: white;
         display: block;
       }
@@ -458,10 +470,10 @@ body {
 
       .motivation-div {
         position: absolute;
-        top: 20%;
-        left: 28%;
+        top: 274px;
+        left: 50%;
+        height: 53px;
         width: 0px;
-        height: 0px;
         z-index: 8;
         transform-origin: bottom right;
         background-color: yellow;
@@ -470,14 +482,13 @@ body {
       }
 
       .motivation-div.open {
-        padding: 10px;
-        width: 400px;
-        height: 400px;
+        width: 150px;
+        height: 53px;
       }
 
       .motivation-text {
-        color: white;
-        display: none;
+        width: 150px;
+        left: 50%;
       }
 
       .motivation-text.open {

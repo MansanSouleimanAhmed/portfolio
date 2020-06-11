@@ -202,10 +202,7 @@ function blackDivMoving() {
       }
       function removeCv() {
         cvDiv.classList.remove("open");
-
         cvText.classList.remove("open");
-
-        //
       }
 
       function removeCredentials() {
@@ -235,35 +232,45 @@ function blackDivMoving() {
         switch (classList) {
           case "li project":
             //   projectDiv.style.backgroundColor = "";
-            removeCredentials();
-            removeCv();
-            setTimeout(addProject, 300);
-            removeMotivation();
+            async function projectAsync() {
+              removeCredentials();
+              removeCv();
+              removeMotivation();
+              removeMotivationTxt();
+            }
+            projectAsync().then(setTimeout(addProject, 300));
             break;
           case "li credentials":
             // projectDiv.style.backgroundColor = "yellow";
-            removeLiProject();
-            removeCv();
-            removeMotivation();
-            setTimeout(addCredentials, 300);
-            removeMotivationTxt();
+            async function credentialsAsync() {
+              removeMotivationTxt();
+              removeLiProject();
+              removeCv();
+              removeMotivation();
+            }
+            credentialsAsync().then(setTimeout(addCredentials, 300));
             break;
           case "li cv":
             //  projectDiv.style.backgroundColor = "green";
-            removeLiProject();
-            removeCredentials();
-            removeMotivation();
-            removeMotivationTxt();
-            cv();
+            async function cvAsync() {
+              removeLiProject();
+              removeCredentials();
+              removeMotivation();
+              removeMotivationTxt();
+            }
+            cvAsync().then(cv());
 
             break;
           case "li motivation":
             //  projectDiv.style.backgroundColor = "gray";
-            removeCv();
-            removeLiProject();
-            removeCredentials();
-            removeMotivationTxt();
-            addMotivation();
+            async function motivationAsync() {
+              removeLiProject();
+              removeCredentials();
+              removeMotivationTxt();
+              removeCv();
+            }
+
+            motivationAsync().then(addMotivation());
             break;
 
           default:
