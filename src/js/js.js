@@ -48,8 +48,8 @@ const other = document.querySelector(".other-div");
 const otherTools = document.querySelector(".other-tools");
 
 const pdf = document.createTextNode("Download pdf");
-const cvText = document.querySelector(".cv-text");
-const motivationText = document.querySelector(".motivation-text");
+//const cvText = document.querySelector(".cv-text");
+//const motivationText = document.querySelector(".motivation-text");
 allSpan.forEach((letters) => {
   letters.addEventListener("mouseover", (e) => {
     letters.animate(
@@ -138,6 +138,8 @@ function dropDown() {
     }, 1700);
   }
 }
+
+/////////Project content
 const websiteTxtOne = document.createTextNode("Website");
 var bFP;
 var websiteAppendOne;
@@ -156,6 +158,69 @@ var websiteAppendThree;
 var githubAppendThree;
 var aTP;
 var bTP;
+////Credentials
+const frontEndId = document.querySelector("#front-end-id");
+const frontEndTxt = document.createTextNode("front-end");
+var frontEndTxtAppend;
+const backEndId = document.querySelector("#back-end-id");
+const backEndTxt = document.createTextNode("back end");
+var backEndAppend;
+var backEndLangId = document.querySelector("#back-end-lang-id");
+const djangoDiv = document.createElement("div");
+var djangoAppend;
+const djangoTxt = document.createTextNode("django");
+var djangoTxtAppend;
+const otherId = document.querySelector("#other-id");
+const otherTxt = document.createTextNode("others");
+var ohterIdAppend;
+const frontLangId = document.querySelector("#front-end-lang-id");
+const html = document.createElement("div");
+const css = document.createElement("div");
+const sass = document.createElement("div");
+const js = document.createElement("div");
+const reactJs = document.createElement("div");
+var htmlAppend;
+var cssAppend;
+var sassAppend;
+var jsAppend;
+var reactJsAppend;
+
+const htmlTxt = document.createTextNode("html");
+const cssTxt = document.createTextNode("css");
+const sassTxt = document.createTextNode("sass");
+const jsTxt = document.createTextNode("js");
+const reactJSTxt = document.createTextNode("react");
+var htmlTxtAppend;
+var cssTxtAppend;
+var sassTxtAppend;
+var jsTxtAppend;
+var reactJsTxtAppend;
+const otherToolsId = document.querySelector("#other-tools-id");
+const githubTools = document.createElement("div");
+const githubToolsTxt = document.createTextNode("github");
+var githubToolsAppend;
+var githubToolsTxtAppend;
+const linuxTools = document.createElement("div");
+const linuxToolsTxt = document.createTextNode("linux");
+var linuxToolsAppend;
+var linuxToolsTxtAppend;
+const gulpTools = document.createElement("div");
+const gulpToolsTxt = document.createTextNode("gulp");
+var gulpToolsAppend;
+var gulpToolsTxtAppend;
+const reduxTools = document.createElement("div");
+const reduxToolsTxt = document.createTextNode("redux");
+var reduxToolsAppend;
+var reduxToolsTxtAppend;
+//CV content
+const cvTxt = document.createTextNode("cv");
+var cvTxtAppend;
+//Motivation content
+const motivationId = document.querySelector("#motivation-id");
+const motivationTxt = document.createTextNode("motivation");
+var motivationTxtAppend;
+////////////////////////////////////
+
 blackDivMoving();
 function blackDivMoving() {
   Array.from(allLi).forEach((ele) => {
@@ -207,46 +272,45 @@ function blackDivMoving() {
         backendLanguages.classList.add("open");
         other.classList.add("open");
         otherTools.classList.add("open");
-      }
+        frontEndTxtAppend = frontEndId.appendChild(frontEndTxt);
+        backEndAppend = backEndId.appendChild(backEndTxt);
+        ohterIdAppend = otherId.appendChild(otherTxt);
+        htmlAppend = frontLangId.appendChild(html);
+        cssAppend = frontLangId.appendChild(css);
+        jsAppend = frontLangId.appendChild(js);
+        reactJsAppend = frontLangId.appendChild(reactJs);
+        html.style.cssText = "background-color:red; height:53px; width:100px";
+        css.style.cssText = "background-color:blue; height:53px; width:100px";
+        js.style.cssText = "background-color:red; height:53px; width:100px";
+        reactJs.style.cssText =
+          "background-color:blue; height:53px; width:100px";
+        htmlTxtAppend = html.appendChild(htmlTxt);
+        cssTxtAppend = css.appendChild(cssTxt);
+        jsTxtAppend = js.appendChild(jsTxt);
+        reactJsTxtAppend = reactJs.appendChild(reactJSTxt);
+        djangoAppend = backEndLangId.appendChild(djangoDiv);
 
-      function removeLiProject() {
-        Array.from(projectDivItem).forEach((ele) => {
-          ele.classList.remove("open");
-        });
-        projectItemP.classList.remove("open");
-        if (
-          bFP.hasChildNodes() &&
-          aSP.hasChildNodes() &&
-          bSP.hasChildNodes() &&
-          aTP.hasChildNodes() &&
-          bTP.hasChildNodes()
-        ) {
-          websiteAppendOne.parentNode.removeChild(websiteTxtOne);
-          githubAppendOne.parentNode.removeChild(githubOne);
-
-          githubAppendTwo.parentNode.removeChild(githubTwo);
-          websiteAppendTwo.parentNode.removeChild(websiteTxtTwo);
-          githubAppendThree.parentNode.removeChild(githubThree);
-          websiteAppendThree.parentNode.removeChild(websiteTxtThree);
-        }
-        /*      if (websiteAppendTwo.hasChildNodes()) {
-          websiteAppendTwo.parentNode.removeChild(githubTwo);
-          githubAppendOne.parentNode.removeChild(websiteTxtTwo);
-        } */
+        djangoDiv.style.cssText =
+          "background-color:red; height:53px; width:100%";
+        djangoTxtAppend = djangoDiv.appendChild(djangoTxt);
+        githubToolsAppend = otherToolsId.appendChild(githubTools);
+        githubTools.style.cssText =
+          "background-color:blue; height:53px; width:100px";
+        githubToolsTxtAppend = githubTools.appendChild(githubToolsTxt);
+        linuxToolsAppend = otherToolsId.appendChild(linuxTools);
+        linuxTools.style.cssText =
+          "background-color:red; height:53px; width:100px";
+        linuxToolsTxtAppend = linuxTools.appendChild(linuxToolsTxt);
+        gulpToolsAppend = otherToolsId.appendChild(gulpTools);
+        gulpTools.style.cssText =
+          "background-color:blue; height:53px; width:100px";
+        gulpToolsTxtAppend = gulpTools.appendChild(gulpToolsTxt);
+        reduxToolsAppend = otherToolsId.appendChild(reduxTools);
+        reduxToolsAppend = otherToolsId.appendChild(reduxTools);
+        reduxTools.style.cssText =
+          "background-color:red; height:53px; width:100px";
+        reduxToolsTxtAppend = reduxTools.appendChild(reduxToolsTxt);
       }
-
-      function cv() {
-        cvDiv.classList.add("open");
-        setTimeout(addTxt, 1500);
-        function addTxt() {
-          cvText.classList.add("open");
-        }
-      }
-      function removeCv() {
-        cvDiv.classList.remove("open");
-        cvText.classList.remove("open");
-      }
-
       function removeCredentials() {
         frontLanguages.classList.remove("open");
         frontEnd.classList.remove("open");
@@ -254,20 +318,79 @@ function blackDivMoving() {
         backendLanguages.classList.remove("open");
         other.classList.remove("open");
         otherTools.classList.remove("open");
-      }
-      function addMotivation() {
-        motivationDiv.classList.add("open");
-        setTimeout(addMotivationTxt, 2000);
-        function addMotivationTxt() {
-          motivationText.classList.add("open");
+        if (frontEndId.hasChildNodes()) {
+          frontEndTxtAppend.parentNode.removeChild(frontEndTxt);
+          backEndAppend.parentNode.removeChild(backEndTxt);
+          ohterIdAppend.parentNode.removeChild(otherTxt);
+          htmlAppend.parentNode.removeChild(html);
+          cssAppend.parentNode.removeChild(css);
+          jsAppend.parentNode.removeChild(js);
+          // jsAppend.parentNode.removeChild(js);
+          reactJsAppend.parentNode.removeChild(reactJs);
+          djangoAppend.parentNode.removeChild(djangoDiv);
+          githubToolsAppend.parentNode.removeChild(githubTools);
+          linuxToolsAppend.parentNode.removeChild(linuxTools);
+          gulpToolsAppend.parentNode.removeChild(gulpTools);
+          reduxToolsAppend.parentNode.removeChild(reduxTools);
         }
       }
-      function removeMotivationTxt() {
-        motivationText.classList.remove("open");
+      function removeLiProject() {
+        Array.from(projectDivItem).forEach((ele) => {
+          ele.classList.remove("open");
+        });
+        projectItemP.classList.remove("open");
+        if (
+          bFP != null &&
+          aSP != null &&
+          bSP != null &&
+          aTP != null &&
+          bTP != null
+        ) {
+          if (
+            bFP.hasChildNodes() &&
+            aSP.hasChildNodes() &&
+            bSP.hasChildNodes() &&
+            aTP.hasChildNodes() &&
+            bTP.hasChildNodes()
+          ) {
+            websiteAppendOne.parentNode.removeChild(websiteTxtOne);
+            githubAppendOne.parentNode.removeChild(githubOne);
+
+            githubAppendTwo.parentNode.removeChild(githubTwo);
+            websiteAppendTwo.parentNode.removeChild(websiteTxtTwo);
+            githubAppendThree.parentNode.removeChild(githubThree);
+            websiteAppendThree.parentNode.removeChild(websiteTxtThree);
+          }
+        }
       }
+
+      function cv() {
+        cvDiv.classList.add("open");
+        //  setTimeout(addTxt, 1500);
+        cvTxtAppend = cvId.appendChild(cvTxt);
+        /*       function addTxt() {
+          // cvText.classList.add("open");
+        } */
+      }
+      function removeCv() {
+        cvDiv.classList.remove("open");
+        if (cvId.hasChildNodes()) {
+          cvTxtAppend.parentNode.removeChild(cvTxt);
+        }
+      }
+
       function removeMotivation() {
         motivationDiv.classList.remove("open");
+        if (motivationId.hasChildNodes()) {
+          motivationTxtAppend.parentNode.removeChild(motivationTxt);
+        }
       }
+
+      function addMotivation() {
+        motivationDiv.classList.add("open");
+        motivationTxtAppend = motivationId.appendChild(motivationTxt);
+      }
+
       let classList = ele.classList.value;
       applyStyle();
       function applyStyle() {
@@ -278,14 +401,13 @@ function blackDivMoving() {
               removeCredentials();
               removeCv();
               removeMotivation();
-              removeMotivationTxt();
             }
             projectAsync().then(setTimeout(addProject, 300));
             break;
           case "li credentials":
             // projectDiv.style.backgroundColor = "yellow";
+
             async function credentialsAsync() {
-              removeMotivationTxt();
               removeLiProject();
               removeCv();
               removeMotivation();
@@ -298,20 +420,18 @@ function blackDivMoving() {
               removeLiProject();
               removeCredentials();
               removeMotivation();
-              removeMotivationTxt();
             }
-            cvAsync().then(cv());
+            cvAsync().then(setTimeout(cv(), 300));
 
             break;
           case "li motivation":
             //  projectDiv.style.backgroundColor = "gray";
             async function motivationAsync() {
+              removeCv();
               removeLiProject();
               removeCredentials();
-              removeMotivationTxt();
-              removeCv();
             }
-            motivationAsync().then(addMotivation());
+            motivationAsync().then(setTimeout(addMotivation(), 300));
             break;
 
           default:

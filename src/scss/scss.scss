@@ -365,7 +365,6 @@ body {
         position: absolute;
         top: 203px;
         left: 35%;
-        flex-wrap: wrap;
         display: flex;
         height: 53px;
         width: 0px;
@@ -421,7 +420,7 @@ body {
         position: absolute;
         top: 386px;
         left: 35%;
-        flex-wrap: wrap;
+
         display: flex;
         height: 53px;
         width: 0px;
@@ -438,6 +437,7 @@ body {
 
       .other-tools {
         position: absolute;
+        display: flex;
         top: 457px;
         left: 217px;
         height: 53px;
@@ -474,11 +474,11 @@ body {
         left: 50%;
         height: 53px;
         width: 0px;
-        z-index: 8;
+        z-index: 7;
         transform-origin: bottom right;
         background-color: yellow;
-        transition: all 3s ease-out;
-        -webkit-transition: all 3s
+        transition: all 1.5s ease-out;
+        -webkit-transition: all 1.5s;
       }
 
       .motivation-div.open {
