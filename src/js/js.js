@@ -50,95 +50,6 @@ const otherTools = document.querySelector(".other-tools");
 const pdf = document.createTextNode("Download pdf");
 //const cvText = document.querySelector(".cv-text");
 //const motivationText = document.querySelector(".motivation-text");
-allSpan.forEach((letters) => {
-  letters.addEventListener("mouseover", (e) => {
-    letters.animate(
-      [{ transform: "scale(0.5)" }, { transform: "scale(1.5)" }],
-      { duration: 1000 }
-    );
-  });
-});
-
-textLeftDiv.addEventListener("mouseout", (e) => {
-  cursor.style.display = "none";
-});
-
-logo.addEventListener("click", dropDown, true);
-var rocket = document.querySelector(".image-bird");
-var btn = document.querySelector(".slide-orange-div");
-
-function dropDown() {
-  scaleAnimation();
-  function scaleAnimation() {
-    logo.style.display = "block";
-    rotateDiv.style.cssText = `width:100%; height:1px; display:block`;
-  }
-  motionLeftDiv();
-  function motionLeftDiv() {
-    blackDiv.style.display = "none";
-    slideOrangeDiv.style.display = "none";
-    //   projectDiv.style.display = "none";
-    logo.style.display = "none";
-    nav.style.display = "none";
-    textLeftDiv.style.cssText = "display:none;";
-    leftFixedDiv.style.cssText = "display:none";
-    imageBird.style.display = "none";
-    var pxTranslate = "50vh";
-    var parentDivBefore = itemDiv.parentNode;
-    var parentDivAfter = itemDiv.parentNode;
-    parentDivBefore.insertBefore(beforeElement, itemDiv);
-    parentDivAfter.insertBefore(afterElement, itemDiv);
-    beforeElement.style.cssText =
-      "height:3000px; width:100vw;bottom:200%; background-color:#f56156; position:absolute; display:block";
-    rotateDiv.animate(
-      [
-        { transform: "translateY(0px)" },
-        { transform: `translateY(${pxTranslate})` },
-      ],
-
-      {
-        duration: 900,
-        fill: "forwards",
-      }
-    );
-    setTimeout(rotationAnimation, 1000);
-    function rotationAnimation() {
-      beforeElement.style.cssText =
-        "height:300%; width:100vw;top:0%; left:100%; background-color:#f56156;";
-      afterElement.style.cssText =
-        "height:300%; width:100vw;  position: absolute; right: 100%;top:0%;background-color:#fff";
-      rotateDiv.style.cssText = `display: block; position: absolute; top: 0px; left:50%;transform-origin: center; height:300%;bottom:25%`;
-      rotateDiv.animate(
-        [{ transform: "rotate(0deg)" }, { transform: "rotate(180deg)" }],
-
-        {
-          duration: 500,
-          iterations: 1,
-          fill: "forwards",
-        }
-      );
-    }
-  }
-  fadeOutEffect();
-  function fadeOutEffect() {
-    var fadeEffect = setInterval(function() {
-      if (!beforeElement.style.opacity) {
-        beforeElement.style.opacity = 1;
-      }
-      if (beforeElement.style.opacity > 0) {
-        beforeElement.style.opacity -= 0.3;
-      } else {
-        clearInterval(fadeEffect);
-      }
-      leftFixedDiv.style.cssText = "display:block";
-      setTimeout(reload, 500);
-      function reload() {
-        document.location.reload(true);
-      }
-    }, 1700);
-  }
-}
-
 /////////Project content
 const websiteTxtOne = document.createTextNode("Website");
 var bFP;
@@ -220,6 +131,117 @@ const motivationId = document.querySelector("#motivation-id");
 const motivationTxt = document.createTextNode("motivation");
 var motivationTxtAppend;
 ////////////////////////////////////
+allSpan.forEach((letters) => {
+  letters.addEventListener("mouseover", (e) => {
+    letters.animate(
+      [{ transform: "scale(0.5)" }, { transform: "scale(1.5)" }],
+      { duration: 1000 }
+    );
+  });
+});
+
+textLeftDiv.addEventListener("mouseout", (e) => {
+  cursor.style.display = "none";
+});
+
+logo.addEventListener("click", dropDown, true);
+var rocket = document.querySelector(".image-bird");
+var btn = document.querySelector(".slide-orange-div");
+
+function dropDown() {
+  scaleAnimation();
+  function scaleAnimation() {
+    logo.style.display = "block";
+    rotateDiv.style.cssText = `width:100%; height:1px; display:block`;
+  }
+  motionLeftDiv();
+  function motionLeftDiv() {
+    if (
+      projectDivItem != null ||
+      frontEndId != null ||
+      frontLangId != null ||
+      backEndId != null ||
+      backEndLangId != null ||
+      otherId != null ||
+      otherTools != null ||
+      cvId != null ||
+      motivationId != null
+    ) {
+      Array.from(projectDivItem).forEach((e) => {
+        e.style.display = "none";
+      });
+      frontEnd.style.display = "none";
+      frontLangId.style.display = "none";
+      backEndId.style.display = "none";
+      backEndLangId.style.display = "none";
+      otherId.style.display = "none";
+      otherTools.style.display = "none";
+      cvId.style.display = "none";
+      motivationId.style.display = "none";
+    }
+
+    blackDiv.style.display = "none";
+    slideOrangeDiv.style.display = "none";
+    logo.style.display = "none";
+    nav.style.display = "none";
+    textLeftDiv.style.cssText = "display:none;";
+    leftFixedDiv.style.cssText = "display:none";
+    imageBird.style.display = "none";
+    var pxTranslate = "50vh";
+    var parentDivBefore = itemDiv.parentNode;
+    var parentDivAfter = itemDiv.parentNode;
+    parentDivBefore.insertBefore(beforeElement, itemDiv);
+    parentDivAfter.insertBefore(afterElement, itemDiv);
+    beforeElement.style.cssText =
+      "height:3000px; width:100vw;bottom:200%; background-color:#f56156; position:absolute; display:block";
+    rotateDiv.animate(
+      [
+        { transform: "translateY(0px)" },
+        { transform: `translateY(${pxTranslate})` },
+      ],
+
+      {
+        duration: 900,
+        fill: "forwards",
+      }
+    );
+    setTimeout(rotationAnimation, 1000);
+    function rotationAnimation() {
+      beforeElement.style.cssText =
+        "height:300%; width:100vw;top:0%; left:100%; background-color:#f56156;";
+      afterElement.style.cssText =
+        "height:300%; width:100vw;  position: absolute; right: 100%;top:0%;background-color:#fff";
+      rotateDiv.style.cssText = `display: block; position: absolute; top: 0px; left:50%;transform-origin: center; height:300%;bottom:25%`;
+      rotateDiv.animate(
+        [{ transform: "rotate(0deg)" }, { transform: "rotate(180deg)" }],
+
+        {
+          duration: 500,
+          iterations: 1,
+          fill: "forwards",
+        }
+      );
+    }
+  }
+  fadeOutEffect();
+  function fadeOutEffect() {
+    var fadeEffect = setInterval(function() {
+      if (!beforeElement.style.opacity) {
+        beforeElement.style.opacity = 1;
+      }
+      if (beforeElement.style.opacity > 0) {
+        beforeElement.style.opacity -= 0.3;
+      } else {
+        clearInterval(fadeEffect);
+      }
+      leftFixedDiv.style.cssText = "display:block";
+      setTimeout(reload, 500);
+      function reload() {
+        document.location.reload(true);
+      }
+    }, 1700);
+  }
+}
 
 blackDivMoving();
 function blackDivMoving() {
