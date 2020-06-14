@@ -19,9 +19,7 @@ function serve(done) {
       baseDir: "./src",
       index: "/index.html",
     },
-    browser: "google chrome",
-    proxy: "localhost:3001",
-    notify: false,
+    port: 8080,
   });
   done();
 }
