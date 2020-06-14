@@ -20,6 +20,7 @@ function serve(done) {
       index: "/index.html",
     },
     port: 8080,
+    open: false,
   });
   done();
 }
