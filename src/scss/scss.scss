@@ -144,7 +144,6 @@ body {
         z-index: 11;
         display: inline-block;
 
-
         span {
           position: relative;
           display: inline-block;
@@ -258,8 +257,6 @@ body {
       position: relative;
       width: 50%;
 
-
-
       .black-div {
         position: absolute;
         top: 0%;
@@ -313,13 +310,11 @@ body {
         left: 35%;
         z-index: 3;
         color: white;
-
       }
 
       .project-item-p.open {
-        display: block
+        display: block;
       }
-
 
       .project-div-item {
         position: absolute;
@@ -337,7 +332,6 @@ body {
 
       .project-div-item.open {
         width: 300px;
-
       }
 
       .front-end-div {
@@ -373,7 +367,6 @@ body {
         background-color: yellow;
         transition: all 1.5s ease-out;
         -webkit-transition: all 1.5s ease-out;
-
       }
 
       .front-end-languages.open {
@@ -408,7 +401,6 @@ body {
         background-color: blue;
         transition: all 1.5s ease-out;
         -webkit-transition: all 1.5s ease-out;
-
       }
 
       .back-end-languages.open {
@@ -457,7 +449,6 @@ body {
         color: white;
         z-index: 8;
         display: none;
-
       }
 
       .cv-text.open {
@@ -465,8 +456,6 @@ body {
         color: white;
         display: block;
       }
-
-
 
       .motivation-div {
         position: absolute;
@@ -509,16 +498,12 @@ body {
         background-color: blue;
         transition: all 1.5s ease-out;
         -webkit-transition: all 1.5s ease-out;
-
-
       }
 
       .cv-div.open {
         width: 150px;
         left: 50%;
       }
-
-
 
       .credentials-div {
         position: absolute;
@@ -537,7 +522,6 @@ body {
         height: 300px;
         width: 30vw;
         margin-right: 50px;
-
       }
 
       .image-bird {

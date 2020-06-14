@@ -17,9 +17,9 @@ function serve(done) {
   browserSync.init({
     server: {
       baseDir: "./src",
-      index: "/index.html"
+      index: "/index.html",
     },
-    port: 3000
+    port: 3000,
   });
   done();
 }
