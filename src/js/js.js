@@ -1,3 +1,5 @@
+const babelCore = require("babel-core/register");
+const babelP = require("babel-polyfill");
 //Store in varibles the dom elements
 const cursor = document.querySelector(".cursor");
 const nav = document.querySelector("nav");
