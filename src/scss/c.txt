@@ -1,0 +1,963 @@
+
+@media (min-width:481px) {
+
+  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+  body {
+
+    //Nav
+    nav {
+      .logo {
+        display: none;
+      }
+
+      .flex-one {
+        display: none;
+      }
+
+      ul {
+        padding: 0px !important;
+
+        #credentials {
+          padding: 0px;
+          margin-right: 10px !important;
+        }
+
+        #li-motivation {
+          padding: 0px;
+          margin-left: 5px !important;
+        }
+
+        #li-cv {
+          padding: 0px;
+
+          margin-left: 15px !important;
+        }
+
+        li {
+          font-size: 11px;
+          padding: 5px !important;
+        }
+      }
+    }
+
+    .fixed-div-container {
+
+      .right-fixed-div {
+        .image-bird {
+          position: absolute;
+          top: 30%;
+          left: -31% !important;
+          height: 170px;
+          width: 170px;
+        }
+
+        //Project
+
+
+        #first-project {
+          top: 80px;
+          left: 15px;
+          height: 100px;
+        }
+
+        .project-div-item.open {
+
+          flex-direction: column;
+          width: 110px;
+          background-color: transparent;
+
+
+        }
+
+        #second-project {
+          top: 200px;
+          left: 15px;
+          height: 100px;
+        }
+
+        #third-project {
+          top: 600px;
+          left: 15px;
+          height: 100px;
+        }
+
+      }
+
+      .left-fixed-div {
+        .text-left-div {
+          left: 0% !important;
+          font-size: 15px !important;
+
+
+          #whoiam {
+            position: absolute;
+            top: 33%;
+            padding: 5px;
+          }
+
+          #welcome-text {
+            font-size: 15px !important;
+          }
+        }
+      }
+    }
+
+    .left-fixed-div {
+      .text-left-div {
+        left: 0% !important;
+        height: 230px !important;
+        top: 50% !important;
+
+        .button {
+          display: none;
+
+          .round-div {}
+        }
+      }
+    }
+
+    /* w */
+    //credentials
+    .front-end-div.open {
+      top: 100px !important;
+      left: 30px !important;
+      height: 30px !important;
+      width: 70px !important;
+
+    }
+
+    .front-end-languages {
+      left: 0px !important;
+    }
+
+    .front-end-languages.open {
+      flex-direction: column;
+      top: 140px !important;
+      left: 20px !important;
+      height: 30px !important;
+      width: 70px !important;
+
+    }
+
+    .back-end-div {
+      left: 0px !important;
+    }
+
+    .back-end-div.open {
+      top: 250px !important;
+      left: 30px !important;
+      height: 30px !important;
+      width: 70px !important;
+    }
+
+    .back-end-languages {
+      left: 0px !important;
+
+
+    }
+
+    .back-end-languages.open {
+      height: 30px !important;
+      width: 70px !important;
+      top: 290px !important;
+      left: 30px !important;
+
+    }
+
+    .other-div.open {
+      top: 600px !important;
+      margin-top: 0px !important;
+      left: 30px !important;
+      height: 30px !important;
+      width: 70px !important;
+    }
+
+    .other-tools {
+      position: absolute;
+      left: 30px !important
+    }
+
+    .other-tools.open {
+      display: none;
+      flex-direction: column;
+      top: 650px !important;
+      left: 20px !important;
+      height: 30px !important;
+      width: 70px !important;
+
+    }
+
+
+    .motivation-div.open {
+
+      width: 70px !important;
+      height: 50px !important;
+      top: 20% !important;
+      left: 2% !important;
+      font-size: 13px;
+
+    }
+
+    .cv-div {
+      position: absolute;
+      left: 20% !important;
+    }
+
+    .cv-div.open {
+      width: 10px !important;
+      top: 10% !important;
+      width: 50px !important;
+      height: 50px !important;
+    }
+
+    //end credentials
+
+
+    .slide-orange-div::before {
+      display: none;
+    }
+
+  }
+}
+
+@media (min-width:641px) {
+
+  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  body {
+
+    //Nav
+    nav {
+      .logo {
+        display: none;
+      }
+
+      .flex-one {
+        display: none;
+      }
+
+      ul {
+        padding: 0px !important;
+
+        #credentials {
+          padding: 0px;
+          margin-left: 25px !important;
+        }
+
+        #li-motivation {
+          padding: 0px;
+          margin-left: 30px !important;
+        }
+
+        #li-cv {
+          margin-left: 50px !important;
+        }
+
+
+
+        li {
+          font-size: 20px;
+          padding: 5px !important;
+        }
+      }
+    }
+
+    .fixed-div-container {
+
+      .right-fixed-div {
+        .image-bird {
+          position: absolute;
+          top: 30%;
+          left: -33% !important;
+          height: 270px;
+          width: 270px;
+        }
+
+        //Project
+
+        .project-div-item.open {
+          flex-direction: column;
+          width: 270px;
+          font-size: 25px;
+          height: 100px;
+          background-color: transparent;
+        }
+
+        #first-project {
+          top: 330px;
+          left: 50px;
+
+        }
+
+
+
+        #second-project {
+          top: 966px;
+          left: 50px;
+
+        }
+
+        #third-project {
+          top: 1266px;
+          left: 50px;
+        }
+      }
+
+      .left-fixed-div {
+        .text-left-div {
+          left: 0% !important;
+          font-size: 15px !important;
+
+
+          #whoiam {
+            position: absolute;
+            top: 33%;
+            padding: 5px;
+            font-size: 30px;
+          }
+
+          #welcome-text {
+            font-size: 15px !important;
+          }
+        }
+      }
+    }
+
+    .left-fixed-div {
+      .text-left-div {
+        left: 0% !important;
+        height: 230px !important;
+        top: 50% !important;
+
+        .button {
+          display: none;
+
+          .round-div {}
+        }
+      }
+    }
+
+    /* w */
+    //credentials
+    .front-end-div.open {
+      font-size: 25px;
+      top: 230px !important;
+      left: 20px !important;
+      height: 50px !important;
+      width: 100px !important;
+
+    }
+
+    .front-end-languages {
+      left: 0px !important;
+
+    }
+
+
+    .front-end-languages.open {
+
+      font-size: 25px !important;
+      flex-direction: column;
+      top: 300px !important;
+      left: 100px !important;
+      height: 200px !important;
+      width: 90px !important;
+
+
+    }
+
+    .back-end-div {
+      left: 0px !important;
+      top: 934px !important;
+    }
+
+    .back-end-div.open {
+      font-size: 25px;
+      top: 934px !important;
+      left: 30px !important;
+      height: 50px !important;
+      width: 100px !important;
+    }
+
+    .back-end-languages {
+      left: 0px !important;
+      top: 1001px !important;
+    }
+
+    .back-end-languages.open {
+      font-size: 25px;
+      height: 50px !important;
+      width: 100px !important;
+      top: 1001px !important;
+      left: 100px !important;
+
+    }
+
+    .other-div {
+      top: 1096px !important;
+    }
+
+    .other-div.open {
+      font-size: 25px;
+      top: 1096px !important;
+      left: 30px !important;
+      height: 50px !important;
+      width: 100px !important;
+      margin-top: 0px !important;
+    }
+
+    .other-tools {
+      position: absolute;
+      top: 1186px !important;
+    }
+
+    .other-tools.open {
+      font-size: 25px;
+      flex-direction: column;
+      top: 1186px !important;
+      left: 100px !important;
+      height: 212px !important;
+      width: 100px !important;
+
+      // margin: 0px !important;
+    }
+
+    //Motivation
+    .motivation-div {
+      top: 20% !important;
+    }
+
+    .motivation-div.open {
+      height: 100px !important;
+      width: 150px !important;
+      top: 20% !important;
+      left: 2% !important;
+      font-size: 25px;
+
+    }
+
+    .cv-div {
+      position: absolute;
+      left: 20% !important;
+      top: 10% !important;
+    }
+
+    .cv-div.open {
+      font-size: 25px;
+      height: 100px !important;
+      width: 150px !important;
+      top: 10% !important;
+
+
+    }
+
+    //end credentials
+
+
+    .slide-orange-div::before {
+      display: none;
+    }
+
+  }
+}
+
+@media (min-width:961px) {
+
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+  body {}
+
+}
+
+
+
+
+
+
+@media (max-width:320px) {
+
+  /* smartphones, iPhone, portrait 480x320 phones */
+  body {
+
+    //Nav
+    nav {
+      .logo {
+        display: none;
+      }
+
+      .flex-one {
+        display: none;
+      }
+
+      ul {
+        padding: 0px !important;
+
+        #credentials {
+          padding: 0px;
+          margin-right: 10px !important;
+        }
+
+        #li-motivation {
+          padding: 0px;
+          margin-left: 5px !important;
+        }
+
+        #li-cv {
+          padding: 0px;
+
+          margin-left: 15px !important;
+        }
+
+        li {
+          font-size: 11px;
+          padding: 5px !important;
+        }
+      }
+    }
+
+    .fixed-div-container {
+
+      .right-fixed-div {
+        .image-bird {
+          position: absolute;
+          top: 30%;
+          left: -50%;
+          height: 170px;
+          width: 170px;
+        }
+
+        //Project
+
+
+        #first-project {
+          top: 80px;
+          left: 15px;
+          height: 100px;
+        }
+
+        .project-div-item.open {
+
+          flex-direction: column;
+          width: 110px;
+          background-color: transparent;
+
+
+        }
+
+        #second-project {
+          top: 100px;
+          left: 15px;
+          height: 100px;
+        }
+
+        #third-project {
+          top: 600px;
+          left: 15px;
+          height: 100px;
+        }
+
+      }
+
+      .left-fixed-div {
+        .text-left-div {
+          left: 0% !important;
+          font-size: 15px !important;
+
+
+          #whoiam {
+            position: absolute;
+            top: 33%;
+            padding: 5px;
+          }
+
+          #welcome-text {
+            font-size: 15px !important;
+          }
+        }
+      }
+    }
+
+    .left-fixed-div {
+      .text-left-div {
+        left: 0% !important;
+        height: 230px !important;
+        top: 50% !important;
+
+        .button {
+          display: none;
+
+          .round-div {}
+        }
+      }
+    }
+
+    /* w */
+    //credentials
+    .front-end-div.open {
+      top: 100px !important;
+      left: 30px !important;
+      height: 30px !important;
+      width: 70px !important;
+
+    }
+
+    .front-end-languages {
+      left: 0px !important;
+    }
+
+    .front-end-languages.open {
+      flex-direction: column;
+      top: 140px !important;
+      left: 20px !important;
+      height: 30px !important;
+      width: 70px !important;
+
+    }
+
+    .back-end-div {
+      left: 0px !important;
+    }
+
+    .back-end-div.open {
+      top: 250px !important;
+      left: 30px !important;
+      height: 30px !important;
+      width: 70px !important;
+    }
+
+    .back-end-languages {
+      left: 0px !important;
+
+
+    }
+
+    .back-end-languages.open {
+      height: 30px !important;
+      width: 70px !important;
+      top: 290px !important;
+      left: 30px !important;
+
+    }
+
+    .other-div.open {
+      top: 600px !important;
+      margin-top: 0px !important;
+      left: 30px !important;
+      height: 30px !important;
+      width: 70px !important;
+    }
+
+    .other-tools {
+      position: absolute;
+      left: 30px !important
+    }
+
+    .other-tools.open {
+      display: none;
+      flex-direction: column;
+      top: 650px !important;
+      left: 20px !important;
+      height: 30px !important;
+      width: 70px !important;
+
+    }
+
+
+    .motivation-div.open {
+
+      width: 70px !important;
+      height: 50px !important;
+      top: 20% !important;
+      left: 2% !important;
+      font-size: 13px;
+
+    }
+
+    .cv-div {
+      position: absolute;
+      left: 20% !important;
+    }
+
+    .cv-div.open {
+      width: 10px !important;
+      top: 10% !important;
+      width: 50px !important;
+      height: 50px !important;
+    }
+
+    //end credentials
+
+
+    .slide-orange-div::before {
+      display: none;
+    }
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* On screens that are 992px or less, set the background color to blue */
+@media only screen and (max-width: 320px) {
+
+  body {
+
+    //Nav
+    nav {
+      .logo {
+        display: none;
+      }
+
+      .flex-one {
+        display: none;
+      }
+
+      ul {
+        padding: 0px !important;
+
+        #credentials {
+          padding: 0px;
+          margin-right: 10px !important;
+        }
+
+        #li-motivation {
+          padding: 0px;
+          margin-left: 5px !important;
+        }
+
+        #li-cv {
+          padding: 0px;
+
+          margin-left: 15px !important;
+        }
+
+        li {
+          font-size: 11px;
+          padding: 5px !important;
+        }
+      }
+    }
+
+    .fixed-div-container {
+
+      .right-fixed-div {
+        .image-bird {
+          position: absolute;
+          top: 30%;
+          left: -50%;
+          height: 170px;
+          width: 170px;
+        }
+
+        //Project
+
+
+        #first-project {
+          top: 80px;
+          left: 15px;
+          height: 100px;
+        }
+
+        .project-div-item.open {
+
+          flex-direction: column;
+          width: 110px;
+          background-color: transparent;
+
+
+        }
+
+        #second-project {
+          top: 200px;
+          left: 15px;
+          height: 100px;
+        }
+
+        #third-project {
+          top: 600px;
+          left: 15px;
+          height: 100px;
+        }
+
+      }
+
+      .left-fixed-div {
+        .text-left-div {
+          left: 0% !important;
+          font-size: 15px !important;
+
+
+          #whoiam {
+            position: absolute;
+            top: 33%;
+            padding: 5px;
+          }
+
+          #welcome-text {
+            font-size: 15px !important;
+          }
+        }
+      }
+    }
+
+    .left-fixed-div {
+      .text-left-div {
+        left: 0% !important;
+        height: 230px !important;
+        top: 50% !important;
+
+        .button {
+          display: none;
+
+          .round-div {}
+        }
+      }
+    }
+
+    /* w */
+    //credentials
+    .front-end-div.open {
+      top: 100px !important;
+      left: 30px !important;
+      height: 30px !important;
+      width: 70px !important;
+
+    }
+
+    .front-end-languages {
+      left: 0px !important;
+    }
+
+    .front-end-languages.open {
+      flex-direction: column;
+      top: 140px !important;
+      left: 20px !important;
+      height: 30px !important;
+      width: 70px !important;
+
+    }
+
+    .back-end-div {
+      left: 0px !important;
+    }
+
+    .back-end-div.open {
+      top: 250px !important;
+      left: 30px !important;
+      height: 30px !important;
+      width: 70px !important;
+    }
+
+    .back-end-languages {
+      left: 0px !important;
+
+
+    }
+
+    .back-end-languages.open {
+      height: 30px !important;
+      width: 70px !important;
+      top: 290px !important;
+      left: 30px !important;
+
+    }
+
+    .other-div.open {
+      top: 600px !important;
+      margin-top: 0px !important;
+      left: 30px !important;
+      height: 30px !important;
+      width: 70px !important;
+    }
+
+    .other-tools {
+      position: absolute;
+      left: 30px !important
+    }
+
+    .other-tools.open {
+      display: none;
+      flex-direction: column;
+      top: 650px !important;
+      left: 20px !important;
+      height: 30px !important;
+      width: 70px !important;
+
+    }
+
+
+    .motivation-div.open {
+
+      width: 70px !important;
+      height: 50px !important;
+      top: 20% !important;
+      left: 2% !important;
+      font-size: 13px;
+
+    }
+
+    .cv-div {
+      position: absolute;
+      left: 20% !important;
+    }
+
+    .cv-div.open {
+      width: 10px !important;
+      top: 10% !important;
+      width: 50px !important;
+      height: 50px !important;
+    }
+
+    //end credentials
+
+
+    .slide-orange-div::before {
+      display: none;
+    }
+
+  }
+
+
+
+}

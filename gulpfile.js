@@ -19,8 +19,8 @@ function serve(done) {
       baseDir: "./src",
       index: "/index.html",
     },
-    port: 8080,
-    open: false,
+    port: 3000,
+    // open: false,
   });
   done();
 }

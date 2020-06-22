@@ -143,6 +143,13 @@ body {
         font-size: 20px;
         z-index: 11;
         display: inline-block;
+        word-wrap: break-word;
+
+        p {
+          margin: 0px;
+          padding: 0px;
+
+        }
 
         span {
           position: relative;
@@ -387,6 +394,7 @@ body {
       }
 
       .back-end-div.open {
+
         width: 150px;
         left: 50%;
       }
@@ -398,7 +406,7 @@ body {
         height: 53px;
         width: 0px;
         z-index: 8;
-        background-color: blue;
+        background-color: red;
         transition: all 1.5s ease-out;
         -webkit-transition: all 1.5s ease-out;
       }
@@ -528,6 +536,8 @@ body {
         position: relative;
         top: 1%;
         left: -15%;
+        height: 200px;
+        width: 200px;
         z-index: 3;
         border-radius: 50%;
         animation: 4s ease infinite jump;
@@ -553,4 +563,95 @@ body {
     width: 1px;
     margin: auto;
   }
+}
+
+
+
+/* On screens that are 600px or less, set the background color to olive */
+/* @media screen and (max-width: 600px) {
+  body {
+    background-color: olive;
+  }
+} */
+
+@media (max-width:1281px) {
+
+  /* big landscape tablets, laptops, and desktops */
+  body {
+    .fixed-div-container {
+      .slide-orange-div:before {
+        left: 99%;
+      }
+
+      .right-fixed-div {
+        .image-bird {
+          position: absolute;
+          left: -22%;
+          top: 30% !important;
+          height: 370px;
+          width: 370px;
+          transform: translateY(30%);
+        }
+      }
+
+      .left-fixed-div {
+        .text-left-div {
+          p {
+            font-size: 40px;
+          }
+        }
+
+        //Button hello
+        .text-left-div {
+          .button {
+            top: 159% !important;
+
+            .round-div {
+              position: absolute;
+              height: 109px;
+              width: 311px;
+              top: 50%;
+              left: -90px;
+              border: 6px solid #fff;
+
+              .round-text {
+                display: none;
+              }
+
+              .circle-one {
+                display: none;
+              }
+            }
+
+            .circle-two {
+              display: none;
+            }
+
+            p {
+              display: none;
+            }
+
+          }
+        }
+      }
+    }
+
+
+  }
+}
+
+@media (min-width:1281px) {
+  /* hi-res laptops and desktops */
+}
+
+@media (max-width: 979px) {
+  /* Everything in here will be styled for small desktops */
+}
+
+@media (max-width: 767px) {
+  /* Everything in here will be styled for tablets */
+}
+
+@media (max-width: 480px) {
+  /* Everything in here will be styled for mobile */
 }
